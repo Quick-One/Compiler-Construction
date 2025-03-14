@@ -164,106 +164,129 @@ void initialize_states()
         states[i].transitions = NULL;
     }
     states[INVALID].token = TK_INVALID;
-    states[S_1].token = TK_NOTOKEN;
+     states[S_60].token = TK_COMMENT;
     states[S_2].token = TK_NOTOKEN;
     states[S_3].token = TK_NOTOKEN;
-    states[S_43].token = TK_NOTOKEN;
-    states[S_45].token = TK_NOTOKEN;
+    states[S_51].token = TK_NOTOKEN;
+    states[S_54].token = TK_NOTOKEN;
     states[S_60].token = TK_NOTOKEN;
-    states[S_4].token = TK_NOT;
-    states[S_5].token = TK_SQL;
-    states[S_6].token = TK_SQR;
-    states[S_7].token = TK_COMMA;
-    states[S_8].token = TK_SEM;
-    states[S_9].token = TK_COLON;
-    states[S_10].token = TK_DOT;
-    states[S_11].token = TK_OP;
-    states[S_12].token = TK_CL;
-    states[S_14].token = TK_EQ;
-    states[S_15].token = TK_PLUS;
-    states[S_16].token = TK_MINUS;
-    states[S_18].token = TK_NE;
-    states[S_21].token = TK_OR;
-    states[S_24].token = TK_AND;
-    states[S_27].token = TK_RUID;
-    states[S_28].token = TK_MUL;
-    states[S_30].token = TK_GT;
-    states[S_31].token = TK_GE;
+
+    states[S_1].token = TK_SQL;
+    states[S_2].token = TK_SQR;
+    states[S_3].token = TK_COMMA;
+    states[S_4].token = TK_SEM;
+    states[S_5].token = TK_COLON;
+    states[S_6].token = TK_DOT;
+    states[S_7].token = TK_OP;
+    states[S_8].token = TK_CL;
+    states[S_9].token = TK_PLUS;
+    states[S_10].token = TK_MINUS;
+    states[S_11].token = TK_MUL;
+    states[S_12].token = TK_DIV;
+    states[S_15].token = TK_AND;
+    states[S_18].token = TK_OR;
+    states[S_19].token = TK_NOT;
+    states[S_21].token = TK_EQ;
+    states[S_23].token = TK_NE;
+
+    states[S_25].token = TK_GE;
+    states[S_26].token = TK_GT;
+    states[S_28].token = TK_LE;
+    states[S_31].token = TK_ASSIGNOP;
+    states[S_32].token = TK_LT;
     states[S_33].token = TK_LT;
-    states[S_34].token = TK_LE;
-    states[S_36].token = TK_LT;
-    states[S_38].token = TK_ASSIGNOP;
-    states[S_39].token = TK_DIV;
-    states[S_49].token = TK_ID;
-    states[S_51].token = TK_NUM;
-    states[S_55].token = TK_RNUM;
-    states[S_58].token = TK_RNUM;
-    states[S_61].token = TK_NUM;
-    states[S_27].retract_count = 1;
-    states[S_30].retract_count = 1;
-    states[S_33].retract_count = 1;
-    states[S_36].retract_count = 2;
+
+    states[S_36].token = TK_RUID;
+    states[S_38].token = TK_NUM;
+    states[S_40].token = TK_NUM;
+    states[S_43].token = TK_RNUM;
+    states[S_47].token = TK_RNUM;
+    states[S_57].token = TK_ID;
+
+    states[S_26].retract_count = 1;
+    states[S_32].retract_count = 1;
+    states[S_33].retract_count = 2;
+
+    states[S_36].retract_count = 1;
+    states[S_40].retract_count = 2;
     states[S_43].retract_count = 1;
-    states[S_45].retract_count = 1;
-    states[S_49].retract_count = 1;
+
     states[S_51].retract_count = 1;
-    states[S_55].retract_count = 1;
-    states[S_61].retract_count = 2;
+    states[S_54].retract_count = 1;
+    states[S_57].retract_count = 1;
+    states[S_58].retract_count = 1;
+
     states[INVALID].retract_count = 1;
 }
 
 // Initializes the transitions of the DFA
 void initialize_transitions()
 {
-    add_transition(START, (transition[]){f('%', S_0), f(' ', S_2), f('\n', S_3), f('~', S_4), f('[', S_5), f(']', S_6), f(',', S_7), f(';', S_8), f(':', S_9), f('.', S_10), f('(', S_11), f(')', S_12), f('=', S_13), f('+', S_15), f('-', S_16), f('!', S_17), f('@', S_19), f('&', S_22), f('#', S_25), f('*', S_28), f('>', S_29), f('<', S_32), f('/', S_39), f('_', S_40), f('\t', S_60)}, 25);
-    add_transition(START, bToD(S_46), 3);
-    add_transition(START, zeroToNine(S_50), 10);
-    add_transition(START, aToZExceptBToD(S_44), 23);
-    add_transition(S_0, (transition[]){f('\n', S_1)}, 1);
-    theta(S_0, S_0);
-    add_transition(S_13, (transition[]){f('=', S_14)}, 1);
-    add_transition(S_17, (transition[]){f('=', S_18)}, 1);
-    add_transition(S_19, (transition[]){f('@', S_20)}, 1);
-    add_transition(S_20, (transition[]){f('@', S_21)}, 1);
-    add_transition(S_22, (transition[]){f('&', S_23)}, 1);
-    add_transition(S_23, (transition[]){f('&', S_24)}, 1);
-    add_transition(S_25, aToZ(S_26), 26);
-    add_transition(S_26, aToZ(S_26), 26);
-    theta(S_26, S_27);
-    add_transition(S_29, (transition[]){f('=', S_31)}, 1);
-    theta(S_29, S_30);
-    add_transition(S_32, (transition[]){f('=', S_34), f('-', S_35)}, 2);
-    theta(S_32, S_33);
-    add_transition(S_35, (transition[]){f('-', S_37)}, 1);
+    add_transition(START, (transition[]){f('%', S_59), f(' ', S_61), f('\n', S_62), f('~', S_19), f('[', S_1), f(']', S_2), f(',', S_3), f(';', S_4), f(':', S_5), f('.', S_6), f('(', S_7), f(')', S_8), f('=', S_20), f('+', S_9), f('-', S_10), f('!', S_22), f('@', S_16), f('&', S_13), f('#', S_34), f('*', S_11), f('>', S_24), f('<', S_27), f('/', S_12), f('_', S_48), f('\t', S_61)}, 25);
+    // EQ AND NE
+    add_transition(S_20, (transition[]){f('=', S_21)}, 1);
+    add_transition(S_22, (transition[]){f('=', S_23)}, 1);
+
+    //OR, AND
+    add_transition(S_16, (transition[]){f('@', S_17)}, 1);
+    add_transition(S_17, (transition[]){f('@', S_18)}, 1);
+    add_transition(S_13, (transition[]){f('&', S_14)}, 1);
+    add_transition(S_14, (transition[]){f('&', S_15)}, 1);
+
+    // RUID
+    add_transition(S_34, aToZ(S_35), 26);
+    add_transition(S_35, aToZ(S_35), 26);
     theta(S_35, S_36);
-    add_transition(S_37, (transition[]){f('-', S_38)}, 1);
-    add_transition(S_40, AToZ(S_41), 52);
-    add_transition(S_41, AToZ(S_41), 52);
-    add_transition(S_41, zeroToNine(S_42), 10);
-    theta(S_41, S_43);
-    add_transition(S_42, zeroToNine(S_42), 10);
-    theta(S_42, S_43);
-    add_transition(S_44, aToZ(S_44), 26);
-    theta(S_44, S_45);
-    add_transition(S_46, aToZ(S_44), 26);
-    add_transition(S_46, twoToSeven(S_47), 6);
-    add_transition(S_47, bToD(S_47), 3);
-    add_transition(S_47, twoToSeven(S_48), 6);
-    theta(S_47, S_49);
-    add_transition(S_48, twoToSeven(S_48), 6);
-    theta(S_48, S_49);
-    add_transition(S_50, (transition[]){f('.', S_52)}, 1);
+
+    // COMMENT
+    add_transition(S_59, (transition[]){f('\n', S_60)}, 1);
+    theta(S_59, S_59);
+
+    // comparison operators
+    add_transition(S_24, (transition[]){f('=', S_25)}, 1);
+    theta(S_24, S_26);
+    add_transition(S_27, (transition[]){f('=', S_28), f('-', S_29)}, 2);
+    theta(S_27, S_32);
+    add_transition(S_29, (transition[]){f('-', S_30)}, 1);
+    theta(S_29, S_33);
+    add_transition(S_30, (transition[]){f('-', S_31)}, 1);
+
+    //FUNID
+    add_transition(S_48, AToZ(S_49), 52);
+    add_transition(S_49, AToZ(S_49), 52);
+    add_transition(S_49, zeroToNine(S_50), 10);
+    theta(S_49, S_51);
     add_transition(S_50, zeroToNine(S_50), 10);
     theta(S_50, S_51);
-    add_transition(S_52, zeroToNine(S_53), 10);
-    theta(S_52, S_61);
-    add_transition(S_53, zeroToNine(S_54), 10);
-    add_transition(S_54, (transition[]){f('E', S_56)}, 1);
-    theta(S_54, S_55);
-    add_transition(S_56, (transition[]){f('+', S_59), f('-', S_59)}, 2);
-    add_transition(S_56, zeroToNine(S_57), 10);
-    add_transition(S_57, zeroToNine(S_58), 10);
-    add_transition(S_59, zeroToNine(S_57), 10);
+    
+    // ID
+    add_transition(START, bToD(S_52), 3);
+    add_transition(START, aToZExceptBToD(S_53), 23);
+    add_transition(S_53, aToZ(S_53), 26);
+    theta(S_53, S_54);
+    add_transition(S_52, aToZ(S_53), 26);
+    theta(S_52, S_58);
+    add_transition(S_52, twoToSeven(S_55), 6);
+    add_transition(S_55, bToD(S_55), 3);
+    add_transition(S_55, twoToSeven(S_56), 6);
+    theta(S_55, S_57);
+    add_transition(S_56, twoToSeven(S_56), 6);
+    theta(S_56, S_57);
+
+    // NUM, RNUM
+    add_transition(START, zeroToNine(S_37), 10);
+    add_transition(S_37, zeroToNine(S_37), 10);
+    add_transition(S_37, (transition[]){f('.', S_39)}, 1);
+    theta(S_37, S_38);
+    add_transition(S_39, zeroToNine(S_41), 10);
+    theta(S_39, S_40);
+    add_transition(S_41, zeroToNine(S_42), 10);
+    add_transition(S_42, (transition[]){f('E', S_44)}, 1);
+    theta(S_42, S_43);
+    add_transition(S_44, (transition[]){f('+', S_45), f('-', S_45)}, 2);
+    add_transition(S_44, zeroToNine(S_46), 10);
+    add_transition(S_45, zeroToNine(S_46), 10);
+    add_transition(S_46, zeroToNine(S_47), 10);
 }
 
 // Initializes the lookup table with the keywords and their respective tokens
@@ -370,7 +393,7 @@ tokenInfo getNextToken(twinBuffer buffer)
         {
             buffer->line_count++;
         }
-        if (curr_state->token == S_43 && token_len > 30)
+        if (curr_state->token == S_51 && token_len > 30)
         {
             err_type = 3;
             curr_state = &states[INVALID];
@@ -422,29 +445,40 @@ tokenInfo getNextToken(twinBuffer buffer)
         token_len -= curr_state->retract_count;
         if (curr_state->token != -1)
         {
-            memset(keyword, '\0', 100);
-            strncpy(keyword, buffer->secondary_buffer + till - token_len + 1, token_len);
-            if (curr_state->state_id == S_43 || curr_state->state_id == S_45)
-            {
-                token_id tk = search(look_up_table, keyword);
-                if (tk == TK_INVALID)
-                {
-                    if (keyword[0] == '_')
-                    {
-                        tk = TK_FUNID;
-                    }
-                    else
-                    {
-                        tk = TK_FIELDID;
-                    }
-                }
-                tokens->tokens[tokens->token_count] = getNewToken(tk, buffer->line_count, keyword);
+            // If the token is a comment, override lexeme and adjust line count.
+            if (curr_state->state_id == S_60) {
+                tokens->tokens[tokens->token_count] = 
+                    getNewToken(curr_state->token, buffer->line_count - 1, "%");
                 tokens->token_count++;
             }
-            if (curr_state->token != TK_NOTOKEN)
-            {
-                tokens->tokens[tokens->token_count] = getNewToken(curr_state->token, buffer->line_count, keyword);
-                tokens->token_count++;
+            else {
+                int len = token_len;
+                if(curr_state->state_id == S_1 && len > 0 && buffer->secondary_buffer[till] == '\n')
+                    len--;
+                memset(keyword, '\0', 100);
+                strncpy(keyword, buffer->secondary_buffer + till - token_len + 1, len);
+                if (curr_state->state_id == S_51 || curr_state->state_id == S_53)
+                {
+                    token_id tk = search(look_up_table, keyword);
+                    if (tk == TK_INVALID)
+                    {
+                        if (keyword[0] == '_')
+                        {
+                            tk = TK_FUNID;
+                        }
+                        else
+                        {
+                            tk = TK_FIELDID;
+                        }
+                    }
+                    tokens->tokens[tokens->token_count] = getNewToken(tk, buffer->line_count, keyword);
+                    tokens->token_count++;
+                }
+                if (curr_state->token != TK_NOTOKEN)
+                {
+                    tokens->tokens[tokens->token_count] = getNewToken(curr_state->token, buffer->line_count, keyword);
+                    tokens->token_count++;
+                }
             }
             curr_state = &states[START];
             token_len = 0;
@@ -519,38 +553,47 @@ tokenInfo getNextToken(twinBuffer buffer)
         token_len -= curr_state->retract_count;
         if (curr_state->token != -1)
         {
-
-            memset(keyword, '\0', 100);
-            if (token_len > buffer->primary_buffer_index + 1)
-            {
-                strncpy(keyword, buffer->secondary_buffer, token_len - buffer->primary_buffer_index - 1);
-                strncpy(keyword + token_len - buffer->primary_buffer_index - 1, buffer->primary_buffer, buffer->primary_buffer_index + 1);
+            if (curr_state->state_id == S_60) {
+                tokens->tokens[tokens->token_count] =
+                    getNewToken(curr_state->token, buffer->line_count - 1, "%");
+                tokens->token_count++;
             }
-            else
-            {
-                strncpy(keyword, buffer->primary_buffer + buffer->primary_buffer_index - token_len + 1, token_len);
-            }
-            if (curr_state->state_id == S_43 || curr_state->state_id == S_45)
-            {
-                token_id tk = search(look_up_table, keyword);
-                if (tk == TK_INVALID)
+            else {
+                int len = token_len;
+                if(curr_state->state_id == S_1 && len > 0 && buffer->primary_buffer[buffer->primary_buffer_index] == '\n')
+                    len--;
+                memset(keyword, '\0', 100);
+                if (token_len > buffer->primary_buffer_index + 1)
                 {
-                    if (keyword[0] == '_')
-                    {
-                        tk = TK_FUNID;
-                    }
-                    else
-                    {
-                        tk = TK_FIELDID;
-                    }
+                    strncpy(keyword, buffer->secondary_buffer, token_len - buffer->primary_buffer_index - 1);
+                    strncpy(keyword + token_len - buffer->primary_buffer_index - 1, buffer->primary_buffer, buffer->primary_buffer_index + 1);
                 }
-                tokens->tokens[tokens->token_count] = getNewToken(tk, buffer->line_count, keyword);
-                tokens->token_count++;
-            }
-            if (curr_state->token != TK_NOTOKEN)
-            {
-                tokens->tokens[tokens->token_count] = getNewToken(curr_state->token, buffer->line_count, keyword);
-                tokens->token_count++;
+                else
+                {
+                    strncpy(keyword, buffer->primary_buffer + buffer->primary_buffer_index - token_len + 1, len);
+                }
+                if (curr_state->state_id == S_51 || curr_state->state_id == S_53)
+                {
+                    token_id tk = search(look_up_table, keyword);
+                    if (tk == TK_INVALID)
+                    {
+                        if (keyword[0] == '_')
+                        {
+                            tk = TK_FUNID;
+                        }
+                        else
+                        {
+                            tk = TK_FIELDID;
+                        }
+                    }
+                    tokens->tokens[tokens->token_count] = getNewToken(tk, buffer->line_count, keyword);
+                    tokens->token_count++;
+                }
+                if (curr_state->token != TK_NOTOKEN)
+                {
+                    tokens->tokens[tokens->token_count] = getNewToken(curr_state->token, buffer->line_count, keyword);
+                    tokens->token_count++;
+                }
             }
             curr_state = &states[START];
             token_len = 0;

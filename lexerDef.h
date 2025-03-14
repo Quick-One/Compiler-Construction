@@ -13,7 +13,7 @@ ID:	2021A7PS2412P			Name: Saurabh Bhandari
 #include <stdio.h>
 
 #define MAX_BUFFER_SIZE 50
-#define MAX_STATES 64
+#define MAX_STATES 65
 #define MAX_TOKENS 100
 
 static const char ALPHABETS[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ' ', '\n', '\t', '~', '(', '[', ']', ')', '<', '>', '!', '@', '#', '%', '&', '*', '_', '+', '-', '/', '=', ';', ':', '.', ','};
@@ -84,6 +84,7 @@ typedef enum state_id
     S_59,
     S_60,
     S_61,
+    S_62,
     START,
     INVALID,
 } state_id; // Enum for state ids
