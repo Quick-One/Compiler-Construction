@@ -1,0 +1,165 @@
+Line                           Lexeme                         Token
+----                           ------                         -----
+1                              %                              TK_COMMENT
+2                              %                              TK_COMMENT
+4                              Unknown Symbol <>              TK_INVALID
+4                              %                              TK_COMMENT
+5                              _main                          TK_MAIN
+5                              Unknown Symbol < >             TK_INVALID
+5                              Unknown Symbol < >             TK_INVALID
+5                              _input                         TK_FUNID
+5                              Unknown Symbol < >             TK_INVALID
+5                              Unknown Symbol < >             TK_INVALID
+5                              [                              TK_SQL
+5                              Unknown Symbol < >             TK_INVALID
+5                              Unknown Symbol <c>             TK_INVALID
+5                              3,                             TK_NUM
+5                              Unknown Symbol < >             TK_INVALID
+5                              ]                              TK_SQR
+5                              [                              TK_SQL
+5                              Unknown Symbol < >             TK_INVALID
+5                              Unknown Symbol <c>             TK_INVALID
+5                              6]                             TK_NUM
+5                              ;                              TK_SEM
+5                              _computeFunctionValue          TK_FUNID
+6                              Unknown Symbol <>              TK_INVALID
+6                              Unknown Symbol <d>             TK_INVALID
+6                              4c                             TK_NUM
+6                              5677<                          TK_NUM
+6                              -                              TK_MINUS
+6                              -                              TK_MINUS
+6                              -                              TK_MINUS
+6                              Unknown Symbol < >             TK_INVALID
+6                              (                              TK_OP
+6                              (                              TK_OP
+6                              Unknown Symbol <c>             TK_INVALID
+6                              3                              TK_NUM
+6                              +                              TK_PLUS
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              Unknown Symbol < >             TK_INVALID
+6                              2*                             TK_NUM
+6                              Unknown Symbol <c>             TK_INVALID
+6                              4-                             TK_NUM
+6                              (                              TK_OP
+6                              Unknown Symbol <c>             TK_INVALID
+6                              5-                             TK_NUM
+6                              5)                             TK_NUM
+6                              )                              TK_CL
+6                              /                              TK_DIV
+6                              Unknown Symbol < >             TK_INVALID
+6                              4;                             TK_NUM
+6                              Unknown Symbol <c>             TK_INVALID
+6                              4b                             TK_NUM
+6                              Unknown Symbol < >             TK_INVALID
+6                              <                              TK_LT
+6                              <=                             TK_LE
+6                              <=                             TK_LE
+6                              Unknown Symbol <=>             TK_INVALID
+6                              <---                           TK_ASSIGNOP
+6                              (                              TK_OP
+6                              Unknown Symbol <d>             TK_INVALID
+6                              4c                             TK_NUM
+6                              5677-                          TK_NUM
+6                              2.35                           TK_RNUM
+6                              +                              TK_PLUS
+6                              34.98E+23                      TK_RNUM
+6                              )                              TK_CL
+6                              *                              TK_MUL
+6                              /                              TK_DIV
+6                              Unknown Pattern <&&>           TK_INVALID
+6                              Unknown Symbol <|>             TK_INVALID
+6                              Unknown Symbol <|>             TK_INVALID
+6                              Unknown Symbol <|>             TK_INVALID
+6                              &&&                            TK_AND
+6                              ;                              TK_SEM
+7                              Unknown Symbol <>              TK_INVALID
+7                              +                              TK_PLUS
+7                              _AbC23                         TK_FUNID
+7                              #new                           TK_RUID
+7                              Unknown Pattern <123.5>        TK_INVALID
+7                              .                              TK_DOT
+7                              34.54E-23                      TK_RNUM
+7                              ;                              TK_SEM
+7                              /                              TK_DIV
+7                              (                              TK_OP
+7                              Unknown Symbol <c>             TK_INVALID
+7                              4b                             TK_NUM
+7                              )                              TK_CL
+7                              ;                              TK_SEM
+8                              Unknown Symbol <>              TK_INVALID
+8                              <                              TK_LT
+8                              >=                             TK_GE
+8                              :                              TK_COLON
+8                              Unknown Symbol <d>             TK_INVALID
+8                              5c                             TK_NUM
+8                              Unknown Symbol <b>             TK_INVALID
+8                              34567:                         TK_NUM
+8                              _abc                           TK_FUNID
+8                              !=                             TK_NE
+8                              ~                              TK_NOT
+8                              Unknown Symbol <d>             TK_INVALID
+8                              4c                             TK_NUM
+8                              5222222222222633333333333377~  TK_NUM
+8                              ;                              TK_SEM
+9                              Unknown Symbol <>              TK_INVALID
+9                              Unknown Pattern <5000.7>       TK_INVALID
+9                              +                              TK_PLUS
+9                              2543.23E45                     TK_RNUM
+9                              -                              TK_MINUS
+9                              432+                           TK_NUM
+9                              343333.55E-12                  TK_RNUM
+9                              4;                             TK_NUM
+10                             Unknown Symbol <>              TK_INVALID
+10                             Unknown Symbol <$>             TK_INVALID
+10                             :                              TK_COLON
+10                             Unknown Symbol < >             TK_INVALID
+10                             Unknown Symbol <c>             TK_INVALID
+10                             3;                             TK_NUM
+11                             Unknown Symbol <>              TK_INVALID
+11                             [                              TK_SQL
+11                             Unknown Symbol <c>             TK_INVALID
+11                             3]                             TK_NUM
+11                             Unknown Symbol < >             TK_INVALID
+11                             <---                           TK_ASSIGNOP
+11                             Unknown Symbol < >             TK_INVALID
+11                             Unknown Symbol < >             TK_INVALID
+11                             _computeFunctionValue          TK_FUNID
+11                             Unknown Symbol < >             TK_INVALID
+11                             Unknown Symbol < >             TK_INVALID
+11                             Unknown Symbol < >             TK_INVALID
+11                             [                              TK_SQL
+11                             5,                             TK_NUM
+11                             Unknown Symbol < >             TK_INVALID
+11                             Unknown Symbol <d>             TK_INVALID
+11                             5c                             TK_NUM
+11                             Unknown Symbol <b>             TK_INVALID
+11                             34567,                         TK_NUM
+11                             Unknown Symbol < >             TK_INVALID
+11                             Unknown Symbol <b>             TK_INVALID
+11                             3b                             TK_NUM
+11                             444]                           TK_NUM
+11                             ;                              TK_SEM
+12                             Unknown Symbol <>              TK_INVALID
+12                             (                              TK_OP
+12                             Unknown Symbol <c>             TK_INVALID
+12                             3)                             TK_NUM
+12                             ;                              TK_SEM
+13                             Unknown Symbol <>              TK_INVALID
+13                             ;                              TK_SEM
+13                             /                              TK_DIV
+13                             /                              TK_DIV
+13                             +                              TK_PLUS
+13                             2c                             TK_NUM
+13                             3e                             TK_NUM
+14                             Unknown Symbol <>              TK_INVALID

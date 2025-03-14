@@ -134,8 +134,10 @@ token getNewToken(token_id id, int lc, char *lexeme)
     token newToken = (token)malloc(sizeof(Token));
     newToken->tk = id;
     newToken->lc = lc;
-    newToken->lexeme = (char *)(malloc(30 * sizeof(char)));
-    memset(newToken->lexeme, '\0', 30);
+    // HARDCODED LEXEME SIZE TO 30?!
+    // CARE THIS MIGHT CAUSE SEGMENTATION FAULT 
+    newToken->lexeme = (char *)(malloc(200 * sizeof(char)));
+    memset(newToken->lexeme, '\0', 200);
     strncpy(newToken->lexeme, lexeme, strlen(lexeme));
     return newToken;
 }
@@ -169,7 +171,7 @@ void initialize_states()
     states[S_3].token = TK_NOTOKEN;
     states[S_51].token = TK_NOTOKEN;
     states[S_54].token = TK_NOTOKEN;
-    states[S_60].token = TK_NOTOKEN;
+    // states[S_60].token = TK_NOTOKEN;// possible error
 
     states[S_1].token = TK_SQL;
     states[S_2].token = TK_SQR;
@@ -628,6 +630,7 @@ tokenInfo getNextToken(twinBuffer buffer)
 state get_next_state(state current_state, char next_char)
 {
     bool flag = false;
+    // this loop seems redundant i guess?
     for (int i = 0; i < ALPHABET_SIZE; i++)
     {
         if (ALPHABETS[i] == next_char)

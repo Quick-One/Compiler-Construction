@@ -12,7 +12,7 @@ ID:	2021A7PS2412P			Name: Saurabh Bhandari
 
 #include <stdio.h>
 
-#define MAX_BUFFER_SIZE 50
+#define MAX_BUFFER_SIZE 300
 #define MAX_STATES 65
 #define MAX_TOKENS 100
 
@@ -88,6 +88,7 @@ typedef enum state_id
     START,
     INVALID,
 } state_id; // Enum for state ids
+// LINE 25 to 89 means 89 - 25 + 1 = 90 - 25 = 65 states
 
 typedef enum token_id
 {
