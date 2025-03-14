@@ -395,6 +395,7 @@ tokenInfo getNextToken(twinBuffer buffer)
         {
             buffer->line_count++;
         }
+        // why compare token with state_id??
         if (curr_state->token == S_51 && token_len > 30)
         {
             err_type = 3;
